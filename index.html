@@ -1,227 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Samarth Dairy | Purity You Can Taste</title>
-	<meta name="description" content="Samarth Dairy – Fresh, pure, and natural dairy from Kolhapur. Daily doorstep delivery of milk, paneer, curd, and makkhan.">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-	<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Johnson - Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header class="header" id="header">
-		<div class="container header__content">
-			<a href="#hero" class="logo" aria-label="Samarth Dairy Home">
-				<span class="logo__mark">🥛</span>
-				<span class="logo__text">Samarth Dairy</span>
-			</a>
-			<nav class="nav" aria-label="Primary">
-				<button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-menu">
-					<i class="fa-solid fa-bars"></i>
-				</button>
-				<ul class="nav__list" id="primary-menu">
-					<li><a href="#hero">Home</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#products">Products</a></li>
-					<li><a href="#subscription">Subscription</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-			<a href="#products" class="btn btn--primary header__cta">Order Now</a>
-		</div>
-		<div class="tricolor-bar" aria-hidden="true"></div>
-	</header>
+  <div class="stars"></div>
 
-	<main>
-		<section id="hero" class="hero" role="region" aria-label="Hero">
-			<div class="hero__media" aria-hidden="true"></div>
-			<div class="container hero__content">
-				<h1 class="hero__title">Purity You Can Taste, Freshness You Can Trust.</h1>
-				<p class="hero__subtitle">From Kolhapur farms to your doorstep, every drop is pure &amp; natural.</p>
-				<div class="hero__actions">
-					<a href="#products" class="btn btn--primary">Shop Now</a>
-					<a href="#about" class="btn btn--ghost">Learn More</a>
-				</div>
-			</div>
-		</section>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Sarthak</div>
+      <div class="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item active" onclick="openTab('home')">Home</li>
+          <li class="nav-item" onclick="openTab('about')">About</li>
+          <li class="nav-item" onclick="openTab('experience')">Experience</li>
+          <li class="nav-item" onclick="openTab('projects')">Projects</li>
+          <li class="nav-item" onclick="openTab('skills')">Skills</li>
+          <li class="nav-item" onclick="openTab('contact')">Contact</li>
+          <div class="indicator"></div>
+        </ul>
+        <button class="theme-btn" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-		<section id="about" class="section about" role="region" aria-label="About Samarth Dairy">
-			<div class="container">
-				<div class="section__head">
-					<h2>About Us</h2>
-					<p>We are a Kolhapur-based dairy committed to purity, freshness, and honest sourcing. Our products come from healthy, well-cared-for cows and reach you in the most hygienic way.</p>
-				</div>
-				<div class="about__highlights">
-					<div class="highlight">
-						<div class="highlight__icon" aria-hidden="true">🐄</div>
-						<h3>Healthy Cows</h3>
-						<p>Ethically raised, well-fed cattle for superior quality milk.</p>
-					</div>
-					<div class="highlight">
-						<div class="highlight__icon" aria-hidden="true">🥛</div>
-						<h3>Farm Fresh Milk</h3>
-						<p>Milk that’s minimally handled and maximally fresh.</p>
-					</div>
-					<div class="highlight">
-						<div class="highlight__icon" aria-hidden="true">💚</div>
-						<h3>100% Natural</h3>
-						<p>No additives or shortcuts—just pure goodness.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- HOME SECTION -->
+    <section id="home" class="tab-content active">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-subtitle reveal" data-anim="left">Full Stack Developer</div>
+            <h1 class="reveal" data-anim="zoom">Hi, I'm <span class="highlight">Sarthak Mhalappa Pujari</span></h1>
+            <div class="typing reveal" data-anim="right">I'm a <span id="typed"></span></div>
+            <p class="hero-description reveal" data-anim="right">
+              Senior Full Stack Developer with 5+ years of experience building scalable web applications. 
+              Specialized in React, Node.js, and cloud technologies. Passionate about clean code and user experience.
+            </p>
+            <div class="cta-buttons reveal" data-anim="up">
+              <button class="btn btn-primary" onclick="openTab('projects')">
+                <i class="fas fa-folder"></i> View My Work
+              </button>
+              <a href="#" class="btn btn-secondary" download="resume.pdf" onclick="downloadResume(event)">
+                <i class="fas fa-download"></i> Download Resume
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item reveal" data-anim="up">
+                <div class="stat-number"><span class="count" data-target="5" data-suffix="+">0</span></div>
+                <div class="stat-label">Years Experience</div>
+              </div>
+              <div class="stat-item reveal" data-anim="up">
+                <div class="stat-number"><span class="count" data-target="10" data-suffix="+">0</span></div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat-item reveal" data-anim="up">
+                <div class="stat-number"><span class="count" data-target="20" data-suffix="+">0</span></div>
+                <div class="stat-label">Happy Clients</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual reveal" data-anim="right">
+            <div class="visual-wrapper">
+              <div class="floating-card">
+                <img src="C:\Users\sarth\Downloads\Blezzar.jpeg" alt="Profile Photo" class="profile-image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section id="products" class="section products" role="region" aria-label="Our Products">
-			<div class="container">
-				<div class="section__head">
-					<h2>Our Products</h2>
-					<p>Freshly prepared every day with care and hygiene.</p>
-				</div>
-				<div class="products__grid">
-					<article class="product">
-						<div class="product__media" style="--bg:url('https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?q=80&w=1600&auto=format&fit=crop');" aria-hidden="true"></div>
-						<div class="product__body">
-							<h3>Fresh Milk</h3>
-							<p>Pure, creamy milk sourced daily from local farms.</p>
-							<a href="#contact" class="btn btn--secondary">Buy Now</a>
-						</div>
-					</article>
-					<article class="product">
-						<div class="product__media" style="--bg:url('https://images.unsplash.com/photo-1604908554140-6438b1bcd19c?q=80&w=1600&auto=format&fit=crop');" aria-hidden="true"></div>
-						<div class="product__body">
-							<h3>Paneer</h3>
-							<p>Soft, rich, and perfect for your favorite recipes.</p>
-							<a href="#contact" class="btn btn--secondary">Buy Now</a>
-						</div>
-					</article>
-					<article class="product">
-						<div class="product__media" style="--bg:url('https://images.unsplash.com/photo-1587365155750-221e8edd2b43?q=80&w=1600&auto=format&fit=crop');" aria-hidden="true"></div>
-						<div class="product__body">
-							<h3>Curd</h3>
-							<p>Thick, wholesome curd set to perfection.</p>
-							<a href="#contact" class="btn btn--secondary">Buy Now</a>
-						</div>
-					</article>
-					<article class="product">
-						<div class="product__media" style="--bg:url('https://images.unsplash.com/photo-1625938144752-0e9c36a2dee8?q=80&w=1600&auto=format&fit=crop');" aria-hidden="true"></div>
-						<div class="product__body">
-							<h3>Makkhan (Butter)</h3>
-							<p>Traditional churned butter with a rich taste.</p>
-							<a href="#contact" class="btn btn--secondary">Buy Now</a>
-						</div>
-					</article>
-				</div>
-			</div>
-		</section>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="tab-content">
+      <div class="container">
+        <h2 class="section-heading reveal" data-anim="zoom">About Me</h2>
+      <div class="about-grid">
+        <div class="about-left">
+          <div class="profile-card reveal" data-anim="left">
+            <img src="https://via.placeholder.com/220" alt="Sarthak" class="about-photo">
+            <h3>Sarthak Mhalappa Pujari</h3>
+            <p class="role">AI & Full Stack Developer</p>
+            <div class="profile-stats">
+              <div class="stat reveal" data-anim="up"><div class="count" data-target="5" data-suffix="+">0</div><span>Years</span></div>
+              <div class="stat reveal" data-anim="up"><div class="count" data-target="10" data-suffix="+">0</div><span>Projects</span></div>
+              <div class="stat reveal" data-anim="up"><div class="count" data-target="20" data-suffix="+">0</div><span>Clients</span></div>
+            </div>
+            <div class="profile-actions">
+              <a href="resume.pdf" target="_blank" class="btn small btn-primary"><i class="fas fa-download"></i> Resume</a>
+              <a href="#contact" class="btn small btn-secondary"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+          </div>
+        </div>
 
-		<section id="why-us" class="section why" role="region" aria-label="Why Choose Us">
-			<div class="container">
-				<div class="section__head">
-					<h2>Why Choose Us</h2>
-				</div>
-				<div class="why__grid">
-					<div class="why__item">
-						<i class="fa-solid fa-seedling"></i>
-						<h3>100% Pure &amp; Natural</h3>
-						<p>Clean ingredients from trusted local farms.</p>
-					</div>
-					<div class="why__item">
-						<i class="fa-solid fa-ban"></i>
-						<h3>No Preservatives</h3>
-						<p>We never compromise on quality and health.</p>
-					</div>
-					<div class="why__item">
-						<i class="fa-solid fa-box"></i>
-						<h3>Hygienic Packaging</h3>
-						<p>Safely sealed for freshness at your doorstep.</p>
-					</div>
-					<div class="why__item">
-						<i class="fa-solid fa-truck"></i>
-						<h3>Daily Doorstep Delivery</h3>
-						<p>Reliable delivery across Kolhapur, every morning.</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="about-right">
+          <p class="lead reveal" data-anim="right">
+            I'm an AI-focused developer with a strong foundation in deep learning, machine learning and data science, building intelligent systems that solve real-world problems. I design and develop end-to-end applications — from polished front-ends to scalable backends — and focus on delivering measurable value.
+          </p>
 
-		<section id="testimonials" class="section testimonials" role="region" aria-label="Customer Testimonials">
-			<div class="container">
-				<div class="section__head">
-					<h2>What Our Customers Say</h2>
-				</div>
-				<div class="slider" data-slider>
-					<button class="slider_btn slider_btn--prev" aria-label="Previous review" data-prev>
-						<i class="fa-solid fa-arrow-left"></i>
-					</button>
-					<div class="slider__track" data-track>
-						<figure class="testimonial">
-							<blockquote>Best milk I’ve ever had, my kids love it!</blockquote>
-							<figcaption>– A Happy Customer</figcaption>
-						</figure>
-						<figure class="testimonial">
-							<blockquote>Paneer is so soft and fresh. Makes cooking a joy!</blockquote>
-							<figcaption>– Home Chef in Kolhapur</figcaption>
-						</figure>
-						<figure class="testimonial">
-							<blockquote>Reliable delivery and excellent quality. Highly recommend.</blockquote>
-							<figcaption>– Regular Subscriber</figcaption>
-						</figure>
-					</div>
-					<button class="slider_btn slider_btn--next" aria-label="Next review" data-next>
-						<i class="fa-solid fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
-		</section>
+          <h4 class="reveal" data-anim="right">Core Strengths</h4>
+          <div class="skills-badges">
+            <span class="skill-badge reveal">Machine Learning</span>
+            <span class="skill-badge reveal">Deep Learning</span>
+            <span class="skill-badge reveal">Data Science</span>
+            <span class="skill-badge reveal">React</span>
+            <span class="skill-badge reveal">Node.js</span>
+            <span class="skill-badge reveal">AWS</span>
+          </div>
 
-		<section id="subscription" class="section cta" role="region" aria-label="Subscribe Today">
-			<div class="container cta__inner">
-				<h2>Join thousands of happy families in Kolhapur!</h2>
-				<p>Subscribe for fresh milk and dairy delivered daily to your home.</p>
-				<div class="cta__actions">
-					<a href="#contact" class="btn btn--light">Subscribe Today</a>
-					<a href="#products" class="btn btn--ghost btn--light">View Products</a>
-				</div>
-			</div>
-		</section>
-	</main>
+          <h4 style="margin-top:20px;" class="reveal" data-anim="right">Tools & Technologies</h4>
+          <div class="skills-badges">
+            <span class="skill-badge reveal">Docker</span>
+            <span class="skill-badge reveal">Kubernetes</span>
+            <span class="skill-badge reveal">Git</span>
+            <span class="skill-badge reveal">PostgreSQL</span>
+            <span class="skill-badge reveal">TensorFlow</span>
+            <span class="skill-badge reveal">PyTorch</span>
+          </div>
 
-	<footer id="contact" class="footer" role="contentinfo">
-		<div class="container footer__grid">
-			<div class="footer__brand">
-				<div class="logo logo--footer">
-					<span class="logo__mark">🥛</span>
-					<span class="logo__text">Samarth Dairy</span>
-				</div>
-				<p>Purity, freshness, and trust—delivered daily.</p>
-			</div>
-			<div class="footer__contact">
-				<h3>Contact</h3>
-				<ul>
-					<li><i class="fa-solid fa-phone"></i> <a href="tel:+919999999999">+91 99999 99999</a></li>
-					<li><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@samarthdairy.in">hello@samarthdairy.in</a></li>
-					<li><i class="fa-solid fa-location-dot"></i> Kolhapur, Maharashtra, India</li>
-				</ul>
-			</div>
-			<div class="footer__social">
-				<h3>Follow Us</h3>
-				<div class="social__links">
-					<a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-					<a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-					<a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-				</div>
-			</div>
-		</div>
-		<div class="footer__legal">
-			<div class="container">
-				<p>© 2025 Samarth Dairy – All Rights Reserved</p>
-			</div>
-		</div>
-	</footer>
+          <p style="margin-top:20px; color:var(--text-secondary);" class="reveal" data-anim="right">I’m available for freelance or full-time opportunities. If you have a project or role that fits my expertise, let’s talk.</p>
+      </div>
+    </section>
 
-	<script src="script.js" defer></script>
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="tab-content">
+      <div class="container">
+        <h2 class="section-heading">Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <h3>Senior Full Stack Developer</h3>
+            <div class="company">TechCorp Solutions | 2021 - Present</div>
+            <p>
+              Led development of enterprise-level applications serving 500K+ users. Architected microservices 
+              infrastructure and mentored junior developers in best practices.
+            </p>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>AWS</span>
+              <span>Docker</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <h3>Full Stack Developer</h3>
+            <div class="company">Digital Innovations Inc | 2019 - 2021</div>
+            <p>
+              Developed and maintained multiple SaaS applications. Implemented responsive UI designs and 
+              optimized backend performance, resulting in 40% improvement in load times.
+            </p>
+            <div class="tech-tags">
+              <span>Vue.js</span>
+              <span>Python</span>
+              <span>MongoDB</span>
+              <span>AWS Lambda</span>
+              <span>GraphQL</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <h3>Junior Developer</h3>
+            <div class="company">StartUp Studios | 2018 - 2019</div>
+            <p>
+              Started my professional journey building web applications from scratch. Learned agile methodologies 
+              and collaborated with cross-functional teams to deliver projects on schedule.
+            </p>
+            <div class="tech-tags">
+              <span>JavaScript</span>
+              <span>HTML/CSS</span>
+              <span>Node.js</span>
+              <span>MySQL</span>
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="tab-content">
+      <div class="container">
+        <h2 class="section-heading">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card reveal">
+            <h3>E-Commerce Platform</h3>
+            <p>
+              A full-featured e-commerce platform with product catalog, shopping cart, and payment integration. 
+              Implemented real-time inventory management and order tracking system.
+            </p>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Stripe API</span>
+              <span>PostgreSQL</span>
+            </div>
+            <a href="#" class="card-link">View Project →</a>
+          </div>
+
+          <div class="project-card reveal">
+            <h3>Task Management App</h3>
+            <p>
+              A collaborative task management application with real-time updates, team collaboration features, 
+              and advanced filtering. Deployed on cloud infrastructure for 99.9% uptime.
+            </p>
+            <div class="tech-tags">
+              <span>React</span>
+              <span>Firebase</span>
+              <span>WebSocket</span>
+              <span>Tailwind CSS</span>
+            </div>
+            <a href="#" class="card-link">View Project →</a>
+          </div>
+
+          <div class="project-card reveal">
+            <h3>Analytics Dashboard</h3>
+            <p>
+              A comprehensive analytics dashboard displaying real-time data visualization and business intelligence. 
+              Features interactive charts and exportable reports for data-driven decisions.
+            </p>
+            <div class="tech-tags">
+              <span>Vue.js</span>
+              <span>D3.js</span>
+              <span>Python</span>
+              <span>MongoDB</span>
+            </div>
+            <a href="#" class="card-link">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="tab-content">
+      <div class="container">
+        <h2 class="section-heading">Skills & Expertise</h2>
+        <div class="skills-wrapper">
+          <div class="skill-column">
+            <h4>Frontend</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> React & React Hooks</li>
+              <li><i class="fas fa-check"></i> Vue.js</li>
+              <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
+              <li><i class="fas fa-check"></i> JavaScript (ES6+)</li>
+              <li><i class="fas fa-check"></i> Responsive Design</li>
+              <li><i class="fas fa-check"></i> Tailwind CSS</li>
+            </ul>
+          </div>
+
+          <div class="skill-column">
+            <h4>Backend</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> Node.js & Express</li>
+              <li><i class="fas fa-check"></i> Python & Django</li>
+              <li><i class="fas fa-check"></i> REST APIs</li>
+              <li><i class="fas fa-check"></i> GraphQL</li>
+              <li><i class="fas fa-check"></i> Microservices</li>
+              <li><i class="fas fa-check"></i> Database Design</li>
+            </ul>
+          </div>
+
+          <div class="skill-column">
+            <h4>Tools & Technologies</h4>
+            <ul>
+              <li><i class="fas fa-check"></i> AWS (EC2, S3, Lambda)</li>
+              <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
+              <li><i class="fas fa-check"></i> Git & Version Control</li>
+              <li><i class="fas fa-check"></i> CI/CD Pipeline</li>
+              <li><i class="fas fa-check"></i> MongoDB & PostgreSQL</li>
+              <li><i class="fas fa-check"></i> Agile & Scrum</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="tab-content">
+      <div class="container">
+        <h2 class="section-heading">Get In Touch</h2>
+        <p class="contact-intro">
+          I'm always interested in hearing about new projects and opportunities. 
+          Feel free to reach out through any of the channels below!
+        </p>
+        <div class="contact-links">
+          <a href="sarthakpujari1831@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="https://www.linkedin.com/in/sarthakpujari1831/" target="_blank" class="contact-link">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/sarthak-pujari" target="_blank" class="contact-link">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="tel:+8329796735" class="contact-link">
+            <i class="fas fa-phone"></i>
+            <span>Phone</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2026 Sarthak Pujari. Built with <i class="fas fa-heart"></i> and modern web technologies.</p>
+      <div class="social-links">
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/sarthakpujari1831/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="hhttps://github.com/sarthak-pujari" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
